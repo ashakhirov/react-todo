@@ -1,1 +1,16 @@
 @import 'assets/css/base/module.css';
+
+#root {
+  position: relative;
+}
+
+.info {
+  margin-top: 4.6rem;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #bfbfbf;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: center;
+}

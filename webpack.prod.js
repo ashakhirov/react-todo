@@ -114,9 +114,12 @@ module.exports = merge(baseConfig, {
           {
             loader: require.resolve('css-loader'),
             options: {
-              modules: true,
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                context: path.resolve(__dirname, 'src'),
+              },
               importLoaders: 1,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
               sourceMap: false,
             },
           },
