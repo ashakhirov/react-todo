@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Roboto;
+  src:
+    url('assets/fonts/HelveticaNeue-Thin.woff') format('woff'),
+    url('assets/fonts/HelveticaNeue-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src:
+    url('assets/fonts/HelveticaNeue-Light.woff') format('woff'),
+    url('assets/fonts/HelveticaNeue-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
