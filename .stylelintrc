@@ -315,12 +315,6 @@
     "selector-attribute-quotes": ["always", {
       "message": "В селекторе атрибута кавычки писать должен ты"
     }],
-    "selector-combinator-space-after": ["always", {
-      "message": "После комбинатора в селекторе пробел нужен"
-    }],
-    "selector-combinator-space-before": ["always", {
-      "message": "Перед комбинатором в селекторе пробел нужен"
-    }],
     "selector-attribute-operator-blacklist": [["id"], {
       "message": "По ID джедай стилизовать не должен"
     }],

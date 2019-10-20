@@ -1,4 +1,6 @@
 .title {
+  position: absolute;
+  top: -9.6rem;
   width: 100%;
   margin: 4.3rem 0;
   font-size: 7.1rem;
