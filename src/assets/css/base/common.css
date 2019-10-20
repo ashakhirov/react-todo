@@ -21,3 +21,20 @@ p {
 strong {
   font-weight: 400;
 }
+
+a {
+  color: inherit;
+  margin: 0.21rem;
+  border: 1px solid transparent;
+  padding: 0.21rem 0.5rem;
+  text-decoration: none;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 3px;
+}
+
+a:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}

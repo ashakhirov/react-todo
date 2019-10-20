@@ -8,6 +8,7 @@ const TodoCount = () => {
       <strong>0</strong>
       <span>&nbsp;</span>
       <span>items</span>
+      <span>&nbsp;</span>
       <span>left</span>
     </span>
   );
