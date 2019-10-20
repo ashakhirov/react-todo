@@ -1,12 +1,14 @@
 import React from 'react';
 
-import styles from './header.module.css';
+import FirstHeading from './first-heading/first-heading';
+import ItemAddInput from './item-add-input/item-add-input';
 
 const Header = () => {
   return (
-    <>
-      <h1 className={styles.title}>todos</h1>
-    </>
+    <header className="header">
+      <FirstHeading />
+      <ItemAddInput />
+    </header>
   );
 };
 
