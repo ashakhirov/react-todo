@@ -17,3 +17,14 @@
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-align: center;
 }
+
+.completed label {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.todo-list li {
+  position: relative;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #ededed;
+}

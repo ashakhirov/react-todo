@@ -5,10 +5,10 @@ import styles from './main.module.css';
 
 import TodoList from './todo-list/todo-list';
 
-const Main = ({ todos }) => {
+const Main = ({ todos, onToggleClick }) => {
   return (
     <main className={styles.main}>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onToggleClick={onToggleClick} />
     </main>
   );
 };
@@ -23,6 +23,7 @@ Main.propTypes = {
     label: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
   })),
+  onToggleClick: PropTypes.func.isRequired,
 };
 
 export default Main;
