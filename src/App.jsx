@@ -13,9 +13,10 @@ const App = () => {
 
   const length = useMemo(() => todos.length, [todos]);
 
-  const handleToggle = (index) => {
+  const handleToggle = (id) => {
     setTodos(todos => {
       const newTodos = [...todos];
+      const index = newTodos.findIndex(todo => todo.id === id);
       const todo = { ...newTodos[index] };
 
       todo.completed = !todo.completed;
@@ -31,7 +32,7 @@ const App = () => {
         <>
           <Main
             todos={todos}
-            onToggleClick={(index) => handleToggle(index)}
+            onToggleClick={(id) => handleToggle(id)}
           />
           <Footer />
         </>

@@ -4,9 +4,19 @@ import PropTypes from 'prop-types';
 import TodoItem from '../todo-item/todo-item';
 
 const TodoList = ({ todos, onToggleClick }) => {
+  const todoItems = todos.map(todo => {
+    return (
+      <TodoItem
+        key={todo.id}
+        todo={todo}
+        onToggleClick={onToggleClick}
+      />
+    );
+  });
+
   return (
     <ul className="todo-list">
-      <TodoItem todos={todos} onToggleClick={onToggleClick} />
+      {todoItems}
     </ul>
   );
 };
