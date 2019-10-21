@@ -9,7 +9,7 @@ import Filters from './filters/filters';
 const Footer = ({ todos }) => {
   return (
     <footer className={styles.footer}>
-      <TodoCount count={todos.length} />
+      <TodoCount todos={todos} />
       <Filters />
     </footer>
   );

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './todo-count.module.css';
 
-const TodoCount = ({ count }) => {
+const TodoCount = ({ todos }) => {
+  const count = todos.filter(({ completed }) => !completed).length;
+
   return (
     <span className={styles['todo-count']}>
       <strong>{count}</strong>
@@ -16,11 +18,15 @@ const TodoCount = ({ count }) => {
 };
 
 TodoCount.defaultProps = {
-  count: 0,
+  todos: [],
 };
 
 TodoCount.propTypes = {
-  count: PropTypes.number,
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  })),
 };
 
 export default TodoCount;
