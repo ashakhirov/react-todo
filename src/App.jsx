@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/header/header';
 import Main from './components/main/main';
@@ -10,8 +10,6 @@ const App = () => {
     { id: 2, label: 'Read a book', completed: false },
     { id: 3, label: 'Build react app', completed: false },
   ]);
-
-  const length = useMemo(() => todos.length, [todos]);
 
   const handleToggle = (id) => {
     setTodos(prevTodos => {
@@ -35,9 +33,9 @@ const App = () => {
   const handleTodoAdd = (event) => {
     const { target, key } = event;
 
-    if (key === 'Enter') {
+    if (key === 'Enter' && target.value) {
       const todo = {
-        id: length + 1,
+        id: todos.length + 1,
         label: target.value,
         completed: false,
       };
@@ -52,7 +50,7 @@ const App = () => {
   };
 
   const content = () => {
-    if (length > 0) {
+    if (todos.length > 0) {
       return (
         <>
           <Main
@@ -60,7 +58,7 @@ const App = () => {
             onToggleClick={(id) => handleToggle(id)}
             onDeleteClick={(id) => handleDelete(id)}
           />
-          <Footer />
+          <Footer todos={todos} />
         </>
       );
     }
