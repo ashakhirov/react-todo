@@ -55,6 +55,18 @@ const App = () => {
     });
   };
 
+  const handleToggleAll = () => {
+    setTodos(prevTodos => {
+      return prevTodos.map(({ id, label, completed }) => {
+        return {
+          completed: !completed,
+          id,
+          label,
+        };
+      });
+    });
+  };
+
   const content = () => {
     if (todos.length > 0) {
       return (
@@ -63,6 +75,7 @@ const App = () => {
             todos={todos}
             onToggleClick={(id) => handleToggle(id)}
             onDeleteClick={(id) => handleDelete(id)}
+            onToggleAll={handleToggleAll}
           />
           <Footer
             todos={todos}

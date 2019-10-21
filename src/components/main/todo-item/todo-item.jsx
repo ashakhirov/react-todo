@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './todo-item.module.css';
+import './todo-item.css';
 
 const TodoItem = ({ todo, onToggleClick, onDeleteClick }) => {
   const { id, label, completed } = todo;
@@ -12,10 +12,10 @@ const TodoItem = ({ todo, onToggleClick, onDeleteClick }) => {
       <div>
         <input
           type="checkbox"
-          className={styles.toggle}
+          className="toggle"
           onClick={() => onToggleClick(id)}
         />
-        <label className={styles.label}>{label}</label>
+        <label>{label}</label>
         <button
           type="button"
           className="destroy"

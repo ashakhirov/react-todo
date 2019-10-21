@@ -18,11 +18,6 @@
   text-align: center;
 }
 
-.completed label {
-  color: #d9d9d9;
-  text-decoration: line-through;
-}
-
 .todo-list li {
   position: relative;
   font-size: 1.7rem;
