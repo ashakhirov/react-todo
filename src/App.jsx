@@ -11,6 +11,8 @@ const App = () => {
     { id: 3, label: 'Build react app', completed: false },
   ]);
 
+  const [filter, setFilter] = useState('all');
+
   const handleToggle = (id) => {
     setTodos(prevTodos => {
       const todos = [...prevTodos];
@@ -55,7 +57,7 @@ const App = () => {
     });
   };
 
-  const toggleCompleted = (isCompleted) => {
+  const toggleProperty = (isCompleted) => {
     setTodos(prevTodos => {
       return prevTodos.map(({ id, label }) => {
         return {
@@ -71,25 +73,45 @@ const App = () => {
     const isAllCompleted = todos.every(todo => todo.completed === true);
 
     if (isAllCompleted) {
-      toggleCompleted(false);
+      toggleProperty(!isAllCompleted);
     } else {
-      toggleCompleted(true);
+      toggleProperty(!isAllCompleted);
     }
   };
+
+  const filterTodos = (todos, filter) => {
+    switch (filter) {
+      case 'active':
+        return todos.filter(todo => !todo.completed);
+      case 'completed':
+        return todos.filter(todo => todo.completed);
+      default:
+        return todos;
+    }
+  };
+
+  const handleFilterChange = (event, filter) => {
+    event.preventDefault();
+    setFilter(filter);
+  };
+
+  const filteredTodos = filterTodos(todos, filter);
 
   const content = () => {
     if (todos.length > 0) {
       return (
         <>
           <Main
-            todos={todos}
+            todos={filteredTodos}
             onToggleClick={(id) => handleToggle(id)}
             onDeleteClick={(id) => handleDelete(id)}
             onToggleAll={handleToggleAll}
           />
           <Footer
-            todos={todos}
+            todos={filteredTodos}
+            filter={filter}
             onClearCompleted={() => handleClear()}
+            onFilterChange={(event, filter) => handleFilterChange(event, filter)}
           />
         </>
       );
