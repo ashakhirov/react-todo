@@ -14,22 +14,41 @@ const App = () => {
   const length = useMemo(() => todos.length, [todos]);
 
   const handleToggle = (id) => {
-    setTodos(todos => {
-      const newTodos = [...todos];
-      const index = newTodos.findIndex(todo => todo.id === id);
-      const todo = { ...newTodos[index] };
+    setTodos(prevTodos => {
+      const todos = [...prevTodos];
+      const index = todos.findIndex(todo => todo.id === id);
+      const todo = { ...todos[index] };
 
       todo.completed = !todo.completed;
-      newTodos[index] = todo;
+      todos[index] = todo;
 
-      return newTodos;
+      return todos;
     });
   };
 
   const handleDelete = (id) => {
-    setTodos(todos => {
-      return todos.filter(todo => todo.id !== id);
+    setTodos(prevTodos => {
+      return prevTodos.filter(todo => todo.id !== id);
     });
+  };
+
+  const handleTodoAdd = (event) => {
+    const { target, key } = event;
+
+    if (key === 'Enter') {
+      const todo = {
+        id: length + 1,
+        label: target.value,
+        completed: false,
+      };
+
+      setTodos(prevTodos => {
+        const todos = [...prevTodos, todo];
+        return todos;
+      });
+
+      target.value = '';
+    }
   };
 
   const content = () => {
@@ -51,7 +70,7 @@ const App = () => {
 
   return (
     <div>
-      <Header />
+      <Header onTodoAdd={(event) => handleTodoAdd(event)} />
       {content()}
     </div>
   );
