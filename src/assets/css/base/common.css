@@ -38,3 +38,16 @@ a {
 a:hover {
   border-color: rgba(255, 41, 5, 0.29);
 }
+
+button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  appearance: none;
+}

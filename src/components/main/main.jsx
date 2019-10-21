@@ -5,10 +5,14 @@ import styles from './main.module.css';
 
 import TodoList from './todo-list/todo-list';
 
-const Main = ({ todos, onToggleClick }) => {
+const Main = ({ todos, onToggleClick, onDeleteClick }) => {
   return (
     <main className={styles.main}>
-      <TodoList todos={todos} onToggleClick={onToggleClick} />
+      <TodoList
+        todos={todos}
+        onToggleClick={onToggleClick}
+        onDeleteClick={onDeleteClick}
+      />
     </main>
   );
 };
@@ -24,6 +28,7 @@ Main.propTypes = {
     completed: PropTypes.bool.isRequired,
   })),
   onToggleClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default Main;

@@ -26,6 +26,12 @@ const App = () => {
     });
   };
 
+  const handleDelete = (id) => {
+    setTodos(todos => {
+      return todos.filter(todo => todo.id !== id);
+    });
+  };
+
   const content = () => {
     if (length > 0) {
       return (
@@ -33,6 +39,7 @@ const App = () => {
           <Main
             todos={todos}
             onToggleClick={(id) => handleToggle(id)}
+            onDeleteClick={(id) => handleDelete(id)}
           />
           <Footer />
         </>

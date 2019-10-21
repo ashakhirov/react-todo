@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './todo-item.module.css';
 
-const TodoItem = ({ todo, onToggleClick }) => {
+const TodoItem = ({ todo, onToggleClick, onDeleteClick }) => {
   const { id, label, completed } = todo;
   const isCompleted = completed ? 'completed' : '';
 
@@ -16,6 +16,11 @@ const TodoItem = ({ todo, onToggleClick }) => {
           onClick={() => onToggleClick(id)}
         />
         <label className={styles.label}>{label}</label>
+        <button
+          type="button"
+          className="destroy"
+          onClick={() => onDeleteClick(id)}
+        />
       </div>
     </li>
   );
@@ -32,6 +37,7 @@ TodoItem.propTypes = {
     completed: PropTypes.bool.isRequired,
   }),
   onToggleClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
