@@ -49,6 +49,12 @@ const App = () => {
     }
   };
 
+  const handleClear = () => {
+    setTodos(prevTodos => {
+      return prevTodos.filter(todo => !todo.completed);
+    });
+  };
+
   const content = () => {
     if (todos.length > 0) {
       return (
@@ -58,7 +64,10 @@ const App = () => {
             onToggleClick={(id) => handleToggle(id)}
             onDeleteClick={(id) => handleDelete(id)}
           />
-          <Footer todos={todos} />
+          <Footer
+            todos={todos}
+            onClearCompleted={() => handleClear()}
+          />
         </>
       );
     }
