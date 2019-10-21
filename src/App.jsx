@@ -55,16 +55,26 @@ const App = () => {
     });
   };
 
-  const handleToggleAll = () => {
+  const toggleCompleted = (isCompleted) => {
     setTodos(prevTodos => {
-      return prevTodos.map(({ id, label, completed }) => {
+      return prevTodos.map(({ id, label }) => {
         return {
-          completed: !completed,
+          completed: isCompleted,
           id,
           label,
         };
       });
     });
+  };
+
+  const handleToggleAll = () => {
+    const isAllCompleted = todos.every(todo => todo.completed === true);
+
+    if (isAllCompleted) {
+      toggleCompleted(false);
+    } else {
+      toggleCompleted(true);
+    }
   };
 
   const content = () => {

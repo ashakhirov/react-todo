@@ -5,10 +5,9 @@ import './todo-item.css';
 
 const TodoItem = ({ todo, onToggleClick, onDeleteClick }) => {
   const { id, label, completed } = todo;
-  const isCompleted = completed ? 'completed' : '';
 
   return (
-    <li className={isCompleted}>
+    <li className={completed ? 'completed' : ''}>
       <div>
         <input
           type="checkbox"
