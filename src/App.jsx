@@ -5,13 +5,14 @@ import Main from './components/main/main';
 import Footer from './components/footer/footer';
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    { id: 1, label: 'Drink Coffee', completed: false },
-    { id: 2, label: 'Read a book', completed: false },
-    { id: 3, label: 'Build react app', completed: false },
-  ]);
+  const todosFromStorage = JSON.parse(localStorage.getItem('todos')) || [];
 
+  const [todos, setTodos] = useState(todosFromStorage);
   const [filter, setFilter] = useState('all');
+
+  const putTodosInStorage = (todos) => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  };
 
   const handleToggle = (id) => {
     setTodos(prevTodos => {
@@ -21,6 +22,7 @@ const App = () => {
 
       todo.completed = !todo.completed;
       todos[index] = todo;
+      putTodosInStorage(todos);
 
       return todos;
     });
@@ -28,7 +30,9 @@ const App = () => {
 
   const handleDelete = (id) => {
     setTodos(prevTodos => {
-      return prevTodos.filter(todo => todo.id !== id);
+      const filteredTodos = prevTodos.filter(todo => todo.id !== id);
+      putTodosInStorage(filteredTodos);
+      return filteredTodos;
     });
   };
 
@@ -48,24 +52,31 @@ const App = () => {
       });
 
       target.value = '';
+
+      todosFromStorage.push(todo);
+      putTodosInStorage(todosFromStorage);
     }
   };
 
   const handleClear = () => {
     setTodos(prevTodos => {
-      return prevTodos.filter(todo => !todo.completed);
+      const uncompletedTodos = prevTodos.filter(todo => !todo.completed);
+      putTodosInStorage(uncompletedTodos);
+      return uncompletedTodos;
     });
   };
 
   const toggleProperty = (isCompleted) => {
     setTodos(prevTodos => {
-      return prevTodos.map(({ id, label }) => {
+      const newTodos = prevTodos.map(({ id, label }) => {
         return {
           completed: isCompleted,
           id,
           label,
         };
       });
+      putTodosInStorage(newTodos);
+      return newTodos;
     });
   };
 

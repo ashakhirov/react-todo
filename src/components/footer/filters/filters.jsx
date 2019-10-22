@@ -15,7 +15,7 @@ const Filters = ({ filter, onFilterChange }) => {
     const clazz = isActive ? styles.selected : '';
 
     return (
-      <li className={styles.filter}>
+      <li key={name} className={styles.filter}>
         <a
           href="#/"
           className={clazz}
