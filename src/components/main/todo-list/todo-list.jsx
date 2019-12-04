@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import TodoItem from '../todo-item/todo-item';
+import TodoItem from "../todo-item/todo-item";
 
 const TodoList = ({ todos, onToggleClick, onDeleteClick }) => {
   const todoItems = todos.map(todo => {
@@ -15,25 +15,23 @@ const TodoList = ({ todos, onToggleClick, onDeleteClick }) => {
     );
   });
 
-  return (
-    <ul className="todo-list">
-      {todoItems}
-    </ul>
-  );
+  return <ul className="todo-list">{todoItems}</ul>;
 };
 
 TodoList.defaultProps = {
-  todos: [],
+  todos: []
 };
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    label: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-  })),
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
+    })
+  ),
   onToggleClick: PropTypes.func.isRequired,
-  onDeleteClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired
 };
 
 export default TodoList;

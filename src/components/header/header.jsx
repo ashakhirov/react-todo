@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import FirstHeading from './first-heading/first-heading';
-import ItemAddInput from './item-add-input/item-add-input';
+import FirstHeading from "./first-heading/first-heading";
+import ItemAddInput from "./item-add-input/item-add-input";
 
 const Header = ({ onTodoAdd }) => {
   return (
@@ -14,7 +14,7 @@ const Header = ({ onTodoAdd }) => {
 };
 
 Header.propTypes = {
-  onTodoAdd: PropTypes.func.isRequired,
+  onTodoAdd: PropTypes.func.isRequired
 };
 
 export default Header;

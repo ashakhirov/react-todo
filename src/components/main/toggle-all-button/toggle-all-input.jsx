@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import styles from './toggle-all-input.module.css';
+import styles from "./toggle-all-input.module.css";
 
 const ToggleAllInput = ({ onToggleAll }) => {
   return (
     <>
       <input
         id="toggle-all"
-        className={styles['toggle-all']}
+        className={styles["toggle-all"]}
         type="checkbox"
         onChange={() => onToggleAll()}
       />
@@ -18,7 +18,7 @@ const ToggleAllInput = ({ onToggleAll }) => {
 };
 
 ToggleAllInput.propTypes = {
-  onToggleAll: PropTypes.func.isRequired,
+  onToggleAll: PropTypes.func.isRequired
 };
 
 export default ToggleAllInput;

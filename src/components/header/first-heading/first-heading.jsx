@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import styles from './first-heading.module.css';
+import styles from "./first-heading.module.css";
 
 const FirstHeading = () => {
   return (
