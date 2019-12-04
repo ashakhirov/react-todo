@@ -1,0 +1,23 @@
+{
+  "files": {
+    "chunk-vendors.js": "/static/js/chunk-vendors.9fedbf67.chunk.js",
+    "chunk-vendors.js.map": "/static/js/chunk-vendors.9fedbf67.chunk.js.map",
+    "main.css": "/static/css/main.8e6334dd.chunk.css",
+    "main.js": "/static/js/main.e1ccdc49.chunk.js",
+    "main.js.map": "/static/js/main.e1ccdc49.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.1de0b5a2.js",
+    "runtime~main.js.map": "/static/js/runtime~main.1de0b5a2.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.516a23a957dcd3defbec9fdac8f8b733.js": "/precache-manifest.516a23a957dcd3defbec9fdac8f8b733.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.8e6334dd.chunk.css.map": "/static/css/main.8e6334dd.chunk.css.map",
+    "static/fonts/index.css": "/static/fonts/roboto-regular-webfont.8174860a.woff2",
+    "static/js/chunk-vendors.9fedbf67.chunk.js.LICENSE": "/static/js/chunk-vendors.9fedbf67.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime~main.1de0b5a2.js",
+    "static/js/chunk-vendors.9fedbf67.chunk.js",
+    "static/css/main.8e6334dd.chunk.css",
+    "static/js/main.e1ccdc49.chunk.js"
+  ]
+}
