@@ -1,26 +1,51 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "env": {
     "browser": true,
     "node": true
   },
-  "extends": ["airbnb"],
-  "plugins": [],
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
+    // Typescript Rules
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // Default Rules
+    "semi": "off",
     "no-unused-vars": "warn",
-    "arrow-body-style": "off",
-    "no-shadow": "off",
-    "arrow-parens": "off",
+    "class-methods-use-this": "warn",
+    "operator-linebreak": "warn",
+    "object-shorthand": "warn",
     "quotes": "off",
+    "no-multiple-empty-lines": "warn",
+    "arrow-body-style": "off",
     "comma-dangle": "off",
-    "object-curly-newline": "off",
+    "no-plusplus": "off",
+    "padded-blocks": "off",
+    "arrow-parens": "off",
     "linebreak-style": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/label-has-for": "off",
-    "jsx-a11y/control-has-associated-label": "off"
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    // React Rules
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-closing-bracket-location": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "react/jsx-wrap-multilines": "warn",
+    "react/jsx-indent": "off",
+    "react/button-has-type": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-unescaped-entities": "warn"
   }
 }

@@ -2,6 +2,7 @@
 const { DefinePlugin } = require("webpack");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const safePostCssParser = require("postcss-safe-parser");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -12,11 +13,11 @@ const isWsl = require("is-wsl");
 const path = require("path");
 
 const baseConfig = require("./webpack.config");
+const publicUrl = "/react-todo/";
 
 const {
   regex: { cssRegex, cssModuleRegex }
 } = baseConfig.externals;
-const PublicUrl = "/react-todo/";
 
 // Production module exports
 module.exports = merge(baseConfig, {
@@ -26,7 +27,7 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, "build"),
     filename: "static/js/[name].[contenthash:8].js",
     chunkFilename: "static/js/[name].[contenthash:8].chunk.js",
-    publicPath: PublicUrl
+    publicPath: publicUrl
   },
   optimization: {
     minimizer: [
@@ -107,11 +108,6 @@ module.exports = merge(baseConfig, {
                 require("postcss-preset-env")({
                   stage: 3
                 }),
-                require("@fullhuman/postcss-purgecss")({
-                  content: ["./**/*.html"],
-                  css: ["./**/*.css"],
-                  keyframes: true
-                }),
                 require("cssnano")
               ]
             }
@@ -144,11 +140,6 @@ module.exports = merge(baseConfig, {
                 require("postcss-preset-env")({
                   stage: 3
                 }),
-                require("@fullhuman/postcss-purgecss")({
-                  content: ["./**/*.html"],
-                  css: ["./**/*.css"],
-                  keyframes: true
-                }),
                 require("cssnano")
               ]
             }
@@ -161,7 +152,7 @@ module.exports = merge(baseConfig, {
     new DefinePlugin({
       "process.env": {
         NODE_ENV: '"production"',
-        BASE_URL: `${PublicUrl}`
+        BASE_URL: `${publicUrl}`
       }
     }),
     new CleanWebpackPlugin({
@@ -192,7 +183,7 @@ module.exports = merge(baseConfig, {
       clientsClaim: true,
       exclude: [/\.map$/, /asset-manifest\.json$/],
       importWorkboxFrom: "cdn",
-      navigateFallback: PublicUrl + "/index.html",
+      navigateFallback: publicUrl + "index.html",
       navigateFallbackBlacklist: [new RegExp("^/_"), new RegExp("/[^/?]+\\.[^/]+$")]
     })
   ]
