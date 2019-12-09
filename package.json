@@ -1,9 +1,9 @@
 {
   "name": "react-todo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Todo App in React",
   "license": "MIT",
-  "homepage": "https://shahirov.github.io/react-todo",
+  "homepage": "https://shahirov.github.io",
   "repository": {
     "type": "git",
     "url": "git@github.com:shahirov/react-todo.git"
@@ -31,7 +31,9 @@
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.7.2",
     "@types/node": "^12.12.14",
-    "@types/styled-components": "^4.4.0",
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^4.1.8",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "babel-eslint": "^10.0.3",
@@ -53,6 +55,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^4.2.0",
     "fork-ts-checker-webpack-plugin": "^3.1.0",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
     "is-wsl": "^2.1.1",
@@ -67,9 +70,6 @@
     "postcss-safe-parser": "^4.0.1",
     "preload-webpack-plugin": "^3.0.0-beta.4",
     "style-loader": "^1.0.0",
-    "stylelint": "^12.0.0",
-    "stylelint-order": "^3.1.1",
-    "stylelint-webpack-plugin": "^1.0.4",
     "terser-webpack-plugin": "^2.2.1",
     "typescript": "^3.7.2",
     "url-loader": "^2.2.0",
@@ -89,11 +89,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
     }
   }
 }
