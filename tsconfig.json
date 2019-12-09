@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Target latest version of ECMAScript.
-    "target": "esnext",
+    "target": "es5",
     // path to output directory
     "outDir": "build",
     // enable strict null checks as a best practice
@@ -18,11 +18,8 @@
     "esModuleInterop": true,
     // use typescript to transpile jsx to js
     "jsx": "react",
-    "rootDir": "./src",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "rootDir": "src",
+    "lib": ["esnext", "dom"],
     "sourceMap": true,
     "module": "esnext",
     "removeComments": true,
@@ -37,13 +34,6 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "build"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "**/*.spec.ts", "build"]
 }
