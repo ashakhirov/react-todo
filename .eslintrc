@@ -41,7 +41,7 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-closing-bracket-location": "warn",
-    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-wrap-multilines": "warn",
     "react/jsx-indent": "off",
     "react/button-has-type": "warn",
