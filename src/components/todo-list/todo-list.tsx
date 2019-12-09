@@ -5,19 +5,19 @@ import { Todos } from "../../App";
 
 type TodoListProps = {
   todos: Todos;
-  onClickToggleTodo(id: number): void;
-  onClickDeleteTodo(id: number): void;
+  onToggleTodo(id: number): void;
+  onDeleteTodo(id: number): void;
 };
 
-const TodoList: React.FC<TodoListProps> = ({ todos, onClickToggleTodo, onClickDeleteTodo }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, onToggleTodo, onDeleteTodo }) => {
   return (
     <ul>
-      {todos.map(todo => (
+      {[...todos].map(todo => (
         <TodoItem
           key={todo.id}
           todo={todo}
-          onClickToggleTodo={onClickToggleTodo}
-          onClickDeleteTodo={onClickDeleteTodo}
+          onClickToggleTodo={onToggleTodo}
+          onClickDeleteTodo={onDeleteTodo}
         />
       ))}
     </ul>

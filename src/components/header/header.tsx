@@ -4,14 +4,14 @@ import { Title } from "./header.styles";
 import TextInput from "../text-input/text-input";
 
 type HeaderProps = {
-  onKeyAddTodo(event: React.KeyboardEvent<HTMLInputElement>, value: string): void;
+  onAddTodo(event: React.KeyboardEvent<HTMLInputElement>, value: string): void;
 };
 
-const Header: React.FC<HeaderProps> = ({ onKeyAddTodo }) => {
+const Header: React.FC<HeaderProps> = ({ onAddTodo }) => {
   return (
     <header>
       <Title>todos</Title>
-      <TextInput onKeyAddTodo={onKeyAddTodo} />
+      <TextInput onAddTodo={onAddTodo} />
     </header>
   );
 };

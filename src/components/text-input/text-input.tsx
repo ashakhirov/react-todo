@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { StyledInput } from "./text-input.styles";
 
 type TextInputProps = {
-  onKeyAddTodo(event: React.KeyboardEvent<HTMLInputElement>, value: string): void;
+  onAddTodo(event: React.KeyboardEvent<HTMLInputElement>, value: string): void;
 };
 
-const TextInput: React.FC<TextInputProps> = ({ onKeyAddTodo }) => {
+const TextInput: React.FC<TextInputProps> = ({ onAddTodo }) => {
   const [value, setValue] = useState("");
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      onKeyAddTodo(event, value);
+      onAddTodo(event, value);
       setValue("");
     }
   };

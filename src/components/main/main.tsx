@@ -8,25 +8,16 @@ import { Todos } from "../../App";
 
 type MainProps = {
   todos: Todos;
-  onClickToggleTodo(id: number): void;
-  onClickDeleteTodo(id: number): void;
-  onClickToggleTodos(): void;
+  onToggleTodo(id: number): void;
+  onDeleteTodo(id: number): void;
+  onToggleTodos(): void;
 };
 
-const Main: React.FC<MainProps> = ({
-  todos,
-  onClickToggleTodo,
-  onClickDeleteTodo,
-  onClickToggleTodos
-}) => {
+const Main: React.FC<MainProps> = ({ todos, onToggleTodo, onDeleteTodo, onToggleTodos }) => {
   return (
     <Wrapper>
-      <ToggleTodosInput onClickToggleTodos={onClickToggleTodos} />
-      <TodoList
-        todos={todos}
-        onClickToggleTodo={onClickToggleTodo}
-        onClickDeleteTodo={onClickDeleteTodo}
-      />
+      <ToggleTodosInput onToggleTodos={onToggleTodos} />
+      <TodoList todos={todos} onToggleTodo={onToggleTodo} onDeleteTodo={onDeleteTodo} />
     </Wrapper>
   );
 };
