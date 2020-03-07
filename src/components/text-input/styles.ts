@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledInput = styled.input`
   position: relative;
@@ -14,9 +14,9 @@ export const StyledInput = styled.input`
   background: rgba(0, 0, 0, 0.003);
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 
-  &::placeholder {
+  ::placeholder {
     font-weight: 400;
     font-style: italic;
     color: #a6a6a6;
   }
-`;
+`

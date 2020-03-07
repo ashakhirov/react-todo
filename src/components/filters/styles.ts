@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Wrapper = styled.ul`
   position: absolute;
   right: 0;
   left: 0;
-`;
+`
 
 export const Filter = styled.li`
   display: inline;
-`;
+`
 
 export const SelectedAnchor = styled.a`
   margin: 0.21rem;
@@ -19,4 +19,4 @@ export const SelectedAnchor = styled.a`
   background-color: transparent;
   color: inherit;
   text-decoration: none;
-`;
+`

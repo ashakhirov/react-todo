@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Input = styled.input`
   position: absolute;
@@ -6,7 +6,7 @@ export const Input = styled.input`
   border: none;
   opacity: 0;
   background: none;
-`;
+`
 
 export const Label = styled.label`
   position: absolute;
@@ -18,10 +18,10 @@ export const Label = styled.label`
   transform: rotate(90deg);
   cursor: pointer;
 
-  &::before {
-    content: "❯";
+  ::before {
+    content: '❯';
     padding: 0.71rem 1.93rem;
     font-size: 1.57rem;
     color: #a6a6a6;
   }
-`;
+`

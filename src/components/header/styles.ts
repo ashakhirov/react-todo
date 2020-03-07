@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Title = styled.h1`
   position: absolute;
@@ -9,4 +9,4 @@ export const Title = styled.h1`
   font-weight: 400;
   text-align: center;
   color: rgba(138, 24, 24, 0.28);
-`;
+`

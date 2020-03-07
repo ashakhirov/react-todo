@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Button = styled.button`
   float: right;
@@ -7,7 +7,7 @@ export const Button = styled.button`
   text-decoration: none;
   cursor: pointer;
 
-  &:hover {
+  :hover {
     text-decoration: underline;
   }
-`;
+`
