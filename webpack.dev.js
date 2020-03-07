@@ -1,7 +1,9 @@
 /* eslint-disable */
-const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
+const {
+  DefinePlugin,
+  HotModuleReplacementPlugin
+} = require('webpack');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
@@ -36,12 +38,10 @@ module.exports = merge(baseConfig, {
     historyApiFallback: false
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: cssRegex,
         exclude: cssModuleRegex,
-        use: [
-          {
+        use: [{
             loader: require.resolve('style-loader'),
           },
           {
@@ -68,8 +68,7 @@ module.exports = merge(baseConfig, {
       },
       {
         test: cssModuleRegex,
-        use: [
-          {
+        use: [{
             loader: require.resolve('style-loader'),
           },
           {
@@ -110,13 +109,6 @@ module.exports = merge(baseConfig, {
     }),
     new HotModuleReplacementPlugin(),
     new ErrorOverlayPlugin(),
-    new StylelintPlugin({
-      configFile: path.resolve(__dirname, '.stylelintrc'),
-      context: path.resolve(__dirname, 'src'),
-      files: '**/*.css',
-      failOnError: false,
-      quiet: false,
-    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     })
