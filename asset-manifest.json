@@ -1,20 +1,20 @@
 {
   "files": {
-    "chunk-vendors.js": "/static/js/chunk-vendors.d48b2626.chunk.js",
-    "chunk-vendors.js.map": "/static/js/chunk-vendors.d48b2626.chunk.js.map",
-    "main.js": "/static/js/main.00bf68de.chunk.js",
-    "main.js.map": "/static/js/main.00bf68de.chunk.js.map",
+    "chunk-vendors.js": "/static/js/chunk-vendors.265aab77.chunk.js",
+    "chunk-vendors.js.map": "/static/js/chunk-vendors.265aab77.chunk.js.map",
+    "main.js": "/static/js/main.46e9d1b0.chunk.js",
+    "main.js.map": "/static/js/main.46e9d1b0.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.bdc34789.js",
     "runtime~main.js.map": "/static/js/runtime~main.bdc34789.js.map",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
-    "precache-manifest.bdcd286f79507c058ba89bb5e2c00e5a.js": "/precache-manifest.bdcd286f79507c058ba89bb5e2c00e5a.js",
+    "precache-manifest.b07d8e2575f900ccd94d3f179a50a9d1.js": "/precache-manifest.b07d8e2575f900ccd94d3f179a50a9d1.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/chunk-vendors.d48b2626.chunk.js.LICENSE": "/static/js/chunk-vendors.d48b2626.chunk.js.LICENSE"
+    "static/js/chunk-vendors.265aab77.chunk.js.LICENSE": "/static/js/chunk-vendors.265aab77.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime~main.bdc34789.js",
-    "static/js/chunk-vendors.d48b2626.chunk.js",
-    "static/js/main.00bf68de.chunk.js"
+    "static/js/chunk-vendors.265aab77.chunk.js",
+    "static/js/main.46e9d1b0.chunk.js"
   ]
 }
