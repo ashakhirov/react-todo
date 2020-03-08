@@ -5,25 +5,12 @@ import { Header } from './components/header'
 import { Main } from './components/main'
 import { Footer } from './components/footer'
 import { GlobalStyles } from './global-styles'
+import { useLocalStorageState } from './hooks'
 
 export const App = () => {
-  const getTodos = () => {
-    const todos = localStorage.getItem('todos')
+  const [todos, setTodos] = useLocalStorageState('todos')
 
-    if (todos) {
-      return JSON.parse(todos)
-    }
-
-    return []
-  }
-
-  const todosFromStorage = getTodos()
-  const [todos, setTodos] = useState<Todo[]>(todosFromStorage)
   const [filter, setFilter] = useState('all')
-
-  const putTodosInStorage = (todos: Todo[]) => {
-    localStorage.setItem('todos', JSON.stringify(todos))
-  }
 
   const handleAddTodo = (todoText: string) => {
     const todo: Todo = {
@@ -33,9 +20,6 @@ export const App = () => {
     }
 
     setTodos((prevTodos) => [...prevTodos, todo])
-
-    todosFromStorage.push(todo)
-    putTodosInStorage(todosFromStorage)
   }
 
   const handleToggleTodo = (id: number) => {
@@ -46,7 +30,6 @@ export const App = () => {
 
       todo.completed = !todo.completed
       todos[index] = todo
-      putTodosInStorage(todos)
 
       return todos
     })
@@ -55,7 +38,6 @@ export const App = () => {
   const handleDeleteTodo = (id: number) => {
     setTodos((prevTodos) => {
       const filteredTodos = prevTodos.filter((todo) => todo.id !== id)
-      putTodosInStorage(filteredTodos)
       return filteredTodos
     })
   }
@@ -68,7 +50,6 @@ export const App = () => {
         label
       }))
 
-      putTodosInStorage(newTodos)
       return newTodos
     })
   }
@@ -86,7 +67,6 @@ export const App = () => {
   const handleClearCompleted = () => {
     setTodos((prevTodos) => {
       const uncompletedTodos = prevTodos.filter((todo) => !todo.completed)
-      putTodosInStorage(uncompletedTodos)
       return uncompletedTodos
     })
   }
