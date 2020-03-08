@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 
 import { Todo } from './lib/types'
-import { Header } from './components/header'
-import { Main } from './components/main'
-import { Footer } from './components/footer'
 import { GlobalStyles } from './global-styles'
 import { useLocalStorageState } from './hooks'
+import { Header, Main, Footer } from './components'
 
 export const App = () => {
   const [todos, setTodos] = useLocalStorageState('todos')
