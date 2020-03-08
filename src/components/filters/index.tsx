@@ -2,12 +2,12 @@ import React from 'react'
 
 import { SelectedAnchor, Filter, Wrapper } from './styles'
 
-interface FiltersProps {
+interface Props {
   filter: string
   onFilterChange(event: React.MouseEvent<HTMLAnchorElement>, filter: string): void
 }
 
-export const Filters = ({ filter, onFilterChange }: FiltersProps) => {
+export const Filters = ({ filter, onFilterChange }: Props) => {
   const linkTemplates = [
     { name: 'all', label: 'All' },
     { name: 'active', label: 'Active' },

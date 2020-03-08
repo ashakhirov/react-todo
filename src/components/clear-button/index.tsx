@@ -2,11 +2,11 @@ import React from 'react'
 
 import { Button } from './styles'
 
-interface ClearButtonProps {
+interface Props {
   onClearCompleted(): void
 }
 
-export const ClearButton = ({ onClearCompleted }: ClearButtonProps) => (
+export const ClearButton = ({ onClearCompleted }: Props) => (
   <Button type="button" onClick={onClearCompleted}>
     Clear completed
   </Button>

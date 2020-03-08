@@ -2,11 +2,11 @@ import React from 'react'
 
 import { Input, Label } from './styles'
 
-interface ToggleInputProps {
+interface Props {
   onToggleTodos(): void
 }
 
-export const ToggleInput = ({ onToggleTodos }: ToggleInputProps) => {
+export const ToggleInput = ({ onToggleTodos }: Props) => {
   return (
     <>
       <Input id="toggle-all" type="checkbox" onChange={onToggleTodos} />

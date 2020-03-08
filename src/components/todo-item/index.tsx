@@ -3,7 +3,7 @@ import React from 'react'
 import { Todo } from '../../lib/types'
 import { Li, Input, Label, Button } from './styles'
 
-interface TodoItemProps {
+interface Props {
   todo: Todo
   onClickToggleTodo(id: number): void
   onClickDeleteTodo(id: number): void
@@ -13,7 +13,7 @@ export const TodoItem = ({
   todo: { id, label, completed },
   onClickToggleTodo,
   onClickDeleteTodo
-}: TodoItemProps) => {
+}: Props) => {
   return (
     <Li>
       <div>

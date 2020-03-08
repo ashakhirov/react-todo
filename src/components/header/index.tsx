@@ -3,11 +3,11 @@ import React from 'react'
 import { Title } from './styles'
 import { TextInput } from '../text-input'
 
-interface HeaderProps {
+interface Props {
   onAddTodo(value: string): void
 }
 
-export const Header = ({ onAddTodo }: HeaderProps) => {
+export const Header = ({ onAddTodo }: Props) => {
   return (
     <header>
       <Title>todos</Title>

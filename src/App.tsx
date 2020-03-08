@@ -28,7 +28,7 @@ export const App = () => {
   const handleAddTodo = (todoText: string) => {
     const todo: Todo = {
       id: todos.length + 1,
-      label: todoText.trim(),
+      label: todoText,
       completed: false
     }
 

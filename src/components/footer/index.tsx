@@ -7,14 +7,14 @@ import { Filters } from '../filters'
 import { Todo } from '../../lib/types'
 import { ClearButton } from '../clear-button'
 
-interface FooterProps {
+interface Props {
   todos: Todo[]
   filter: string
   onClearCompleted(): void
   onFilterChange(event: React.MouseEvent<HTMLAnchorElement>, filter: string): void
 }
 
-export const Footer = ({ todos, filter, onClearCompleted, onFilterChange }: FooterProps) => {
+export const Footer = ({ todos, filter, onClearCompleted, onFilterChange }: Props) => {
   const isTodoCompleted = todos.some((todo) => todo.completed === true)
 
   return (

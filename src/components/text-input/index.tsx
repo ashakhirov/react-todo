@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { StyledInput } from './styles'
 
-interface TextInputProps {
+interface Props {
   onAddTodo(value: string): void
 }
 
-export const TextInput = ({ onAddTodo }: TextInputProps) => {
+export const TextInput = ({ onAddTodo }: Props) => {
   const [value, setValue] = useState('')
+
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [])
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    onAddTodo(value)
+    onAddTodo(value.trim())
     setValue('')
   }
 
@@ -23,6 +31,7 @@ export const TextInput = ({ onAddTodo }: TextInputProps) => {
   return (
     <form onSubmit={handleSubmit}>
       <StyledInput
+        ref={inputRef}
         type="text"
         value={value}
         onChange={handleChange}

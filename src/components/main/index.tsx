@@ -6,14 +6,14 @@ import { Todo } from '../../lib/types'
 import { TodoList } from '../todo-list'
 import { ToggleInput } from '../toggle-input'
 
-interface MainProps {
+interface Props {
   todos: Todo[]
   onToggleTodo(id: number): void
   onDeleteTodo(id: number): void
   onToggleTodos(): void
 }
 
-export const Main = ({ todos, onToggleTodo, onDeleteTodo, onToggleTodos }: MainProps) => {
+export const Main = ({ todos, onToggleTodo, onDeleteTodo, onToggleTodos }: Props) => {
   return (
     <Wrapper>
       <ToggleInput onToggleTodos={onToggleTodos} />

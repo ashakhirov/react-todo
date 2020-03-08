@@ -3,11 +3,11 @@ import React, { useMemo } from 'react'
 import { Wrapper } from './styles'
 import { Todo } from '../../lib/types'
 
-interface TodoCountProps {
+interface Props {
   todos: Todo[]
 }
 
-export const Counter = ({ todos }: TodoCountProps) => {
+export const Counter = ({ todos }: Props) => {
   const count = useMemo(() => todos.filter(({ completed }) => !completed).length, [todos])
 
   return (
