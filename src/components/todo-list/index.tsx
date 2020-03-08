@@ -7,9 +7,10 @@ interface Props {
   todos: Todo[]
   onToggleTodo(id: number): void
   onDeleteTodo(id: number): void
+  onEditTodo: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-export const TodoList = ({ todos, onToggleTodo, onDeleteTodo }: Props) => {
+export const TodoList = ({ todos, onToggleTodo, onDeleteTodo, onEditTodo }: Props) => {
   return (
     <ul>
       {todos.map((todo) => (
@@ -18,6 +19,7 @@ export const TodoList = ({ todos, onToggleTodo, onDeleteTodo }: Props) => {
           todo={todo}
           onClickToggleTodo={onToggleTodo}
           onClickDeleteTodo={onDeleteTodo}
+          onEditTodo={onEditTodo}
         />
       ))}
     </ul>

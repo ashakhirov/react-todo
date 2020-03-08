@@ -1,8 +1,82 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 type Props = {
   completed: boolean
 }
+
+export const Button = styled.button`
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+  cursor: pointer;
+
+  ::after {
+    content: '×';
+  }
+`
+
+export const EditInput = styled.input`
+  display: none;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  border: 0;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  outline: none;
+`
+
+export const Wrapper = styled.div`
+  display: block;
+`
+
+export const Li = styled.li<{ editable: boolean }>`
+  position: relative;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #ededed;
+
+  :hover ${Button} {
+    display: block;
+  }
+
+  :last-child {
+    border-bottom: none;
+  }
+
+  ${({ editable }) =>
+    editable &&
+    css`
+      border-bottom: none;
+      margin-bottom: -1px;
+      padding: 0;
+
+      & ${Wrapper} {
+        display: none;
+      }
+
+      & ${EditInput} {
+        display: block;
+        margin: 0 0 0 43px;
+        width: 506px;
+      }
+    `}
+`
 
 export const Input = styled.input<Props>`
   position: absolute;
@@ -36,34 +110,4 @@ export const Label = styled.label<Props>`
 
   color: ${({ completed }) => completed && '#d9d9d9'};
   text-decoration: ${({ completed }) => completed && 'line-through'};
-`
-
-export const Button = styled.button`
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 10px;
-  bottom: 0;
-  width: 40px;
-  height: 40px;
-  margin: auto 0;
-  font-size: 30px;
-  color: #cc9a9a;
-  margin-bottom: 11px;
-  transition: color 0.2s ease-out;
-  cursor: pointer;
-
-  ::after {
-    content: '×';
-  }
-`
-
-export const Li = styled.li`
-  position: relative;
-  font-size: 1.7rem;
-  border-bottom: 1px solid #ededed;
-
-  :hover ${Button} {
-    display: block;
-  }
 `

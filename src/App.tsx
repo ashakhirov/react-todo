@@ -98,6 +98,7 @@ export const App = () => {
             onToggleTodo={handleToggleTodo}
             onDeleteTodo={handleDeleteTodo}
             onToggleTodos={handlerToggleTodos}
+            onEditTodo={setTodos}
           />
           <Footer
             todos={filteredTodos}

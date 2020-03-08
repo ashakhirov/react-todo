@@ -5,6 +5,7 @@ export const StyledFooter = styled.footer`
   padding: 0.7rem 1.07rem;
   text-align: center;
   color: #777;
+  border-top: 1px solid #e6e6e6;
 
   ::before {
     content: '';

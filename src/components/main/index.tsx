@@ -11,13 +11,19 @@ interface Props {
   onToggleTodo(id: number): void
   onDeleteTodo(id: number): void
   onToggleTodos(): void
+  onEditTodo: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-export const Main = ({ todos, onToggleTodo, onDeleteTodo, onToggleTodos }: Props) => {
+export const Main = ({ todos, onToggleTodo, onDeleteTodo, onToggleTodos, onEditTodo }: Props) => {
   return (
     <Wrapper>
       <ToggleInput onToggleTodos={onToggleTodos} />
-      <TodoList todos={todos} onToggleTodo={onToggleTodo} onDeleteTodo={onDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onToggleTodo={onToggleTodo}
+        onEditTodo={onEditTodo}
+        onDeleteTodo={onDeleteTodo}
+      />
     </Wrapper>
   )
 }
